@@ -165,6 +165,18 @@ SECTIONS
    __mmu_tbl_end = .;
 } > ps7_ddr_0
 
+.mmu_tbl_sect (ALIGN(16384)) : {
+   __mmu_tbl_sect_start = .;
+   *(.mmu_tbl_sect)
+   __mmu_tbl_sect_end = .;
+} > ps7_ddr_0
+
+.mmu_tbl_page (ALIGN(4096)) : {
+   __mmu_tbl_page_start = .;
+   *(.mmu_tbl_page)
+   __mmu_tbl_page_end = .;
+} > ps7_ddr_0
+
 .ARM.exidx : {
    __exidx_start = .;
    *(.ARM.exidx*)
